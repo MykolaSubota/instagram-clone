@@ -1,0 +1,11 @@
+<%= image_tag @pic.image.url %>
+<h1><%= @pic.title %></h1>
+<p><%= @pic.description %></p>
+<p>by <%= @pic.user.email %></p>
+<%= link_to like_pic_path(@pic), method: :put do %>
+	<%= @pic.get_upvotes.size %>
+<% end %>
+<% if user_signed_in? %>
+	<%= link_to "Fic Pic", edit_pic_path %>
+	<%= link_to "Delete", pic_path, method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>

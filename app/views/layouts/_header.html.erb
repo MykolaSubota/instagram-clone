@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+ <%= link_to "Instagram", root_path, class: "navbar-brand" %>
+   
+    <ul class="navbar-nav ml-auto">
+    <% if user_signed_in? %>
+    	<ul class="navbar-nav ml-auto">
+     	 <%= link_to new_pic_path, class: "nav-link" do%>
+     	 <i class="far fa-images"></i> Gram It
+    	  <% end %>
+     	 <%= link_to edit_user_registration_path, class: "nav-link" do%>
+       <i class="far fa-images"></i> Setings
+        <% end %>
+    	  
+     	 <%= link_to destroy_user_session_path, class: "nav-link", method: :delete do%>
+     	 <i class="far fa-images"></i> Sign Out
+    	  <% end %>
+    <% else %>
+    <%= link_to new_user_session_path, class: "nav-link" do%>
+    	  <i class="far fa-images"></i> Log In
+    	  <% end %>
+      <%= link_to new_user_registration_path,class: "nav-link" do %>
+      <i class="far fa-images"></i> Join
+    <% end %>
+    <% end %>
+  </ul>
+  </nav>
+   

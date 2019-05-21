@@ -1,0 +1,6 @@
+<% @pics.each do |pic| %>
+<h2><%= link_to pic.title, pic %></h2>
+	<%= link_to (image_tag pic.image.url), pic %>
+	<h2><%= link_to pic.description, pic %></h2>
+<% end %>
+
