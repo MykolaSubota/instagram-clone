@@ -1,0 +1,7 @@
+<% @pics.each do |pic| %>
+<div  style="border: 2px solid #efefef;width:40%; " >
+<h2><%= link_to pic.title, pic %></h2>
+	<%= link_to (image_tag pic.image.url), pic %>
+	<h2><%= link_to pic.description, pic %></h2>
+	</div>
+<% end %>

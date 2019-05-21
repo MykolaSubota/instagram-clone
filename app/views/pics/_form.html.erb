@@ -1,0 +1,18 @@
+<%= form_for @pic do |f| %>
+	<% if @pic.errors.any? %>
+		<% @pic.errors.full_messages.each do |msg| %>
+			<%= msg %>
+		<% end %>
+	<% end %>
+	<div style="height:50px">
+	<%= f.label :image %>
+  	<%= f.file_field :image %>
+  	</div>
+  	<div style="height:50px">
+	<%= f.label :title %>
+  	<%= f.text_field :title %>
+  	</div>
+  	<div style="height:50px"><%= f.label :description %>
+  	<%= f.text_field :description %>
+  <%= f.submit "Save" %></div>
+<% end %>

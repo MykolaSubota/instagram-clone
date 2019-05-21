@@ -1,0 +1,20 @@
+
+<%= image_tag @pic.image.url %>
+<h1><%= @pic.title %></h1>
+<p><%= @pic.description %></p>
+<p>by <%= @pic.user.email %></p>
+<%= link_to like_pic_path(@pic),class: "w-10 h-10", method: :put do %>
+<svg viewBox="0 0 18 15" weight="20" height="20">
+
+   
+        <path d="M12.958,1.03 C11.045,1.03 9.447,2.378 9.047,4.178 C8.631,2.375 7.026,1.03 5.102,1.03 C2.865,1.03 1.052,2.854 1.052,5.102 C1.052,11.598 9.057,14.94 9.057,14.94 C9.057,14.94 16.969,11.682 16.969,5.061 C16.969,2.833 15.174,1.03 12.958,1.03 L12.958,1.03 Z" fill="#434343" class="si-glyph-fill">
+  
+</svg>
+	<%= @pic.get_upvotes.size%>
+	
+<% end %>
+
+<% if user_signed_in? %>
+	<%= link_to "Fix Pic", edit_pic_path %>
+	<%= link_to "Delete", pic_path, method: :delete, data: {confirm: "Are you sure?"} %>
+<% end %>
