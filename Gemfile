@@ -26,7 +26,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'rspec-rails', '~> 3.8'
+gem "factory_bot_rails"
+gem 'shoulda-matchers', '~> 3.1' # make sure it's in the right environment, test? development?
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'jquery-rails'
